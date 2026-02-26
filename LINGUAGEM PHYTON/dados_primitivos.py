@@ -36,4 +36,7 @@ print ('Resultado da soma: ',2+2)
 print ('Resultado da Divisão:', 2+2)
 print ('O aluno passou de ano?',True)
 print ('Altura' ,1,71)
+print ('R$' 500,00)
+print ('teste', 1,5.2,False)
+print(1236, 'teste')
 
