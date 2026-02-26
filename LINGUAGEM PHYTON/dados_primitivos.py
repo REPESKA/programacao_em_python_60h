@@ -27,3 +27,13 @@ print (1 + 2)
 # tipo bool - logico
 True
 False
+
+#concatenação
+# é juntar os dados:
+
+print ('Olá mundo', 'Nome')
+print ('Resultado da soma: ',2+2)
+print ('Resultado da Divisão:', 2+2)
+print ('O aluno passou de ano?',True)
+print ('Altura' ,1,71)
+
