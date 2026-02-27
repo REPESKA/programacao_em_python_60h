@@ -1,0 +1,34 @@
+print() 
+print() 
+
+print('FICHA DE CADASTRO')
+print() 
+nome = input('Digite o nome Cliente: ')
+print() 
+print('Olá,', nome, ' Digite a palavra chave para recuperar sua senha', nome,'segundo nome')
+print(
+
+nota1 = float(input('Digite a primeira nota: '))
+nota2 = float(input('Digite a segunda nota: '))
+nota3 = float(input('Digite a terceira nota: '))
+media = (nota1 + nota2 + nota3) / 3
+
+github = float(input('Digite a primeira: ')) 
+lucid = float(input('Digite a segunda : ')) 
+python = float(input('Digite a terceira nota: '))
+media = (github + lucid + python) / 3
+
+print('A média das notas é:', media)
+
+github = 5
+print('digite', nome,'Sua senha é',github)
+lucid = 10
+print('digite', nome,'Sua senha é',lucid)
+python = 15
+print('digite', nome,'Sua senha é',python)
+
+
+
+print() 
+print ('***' * 15)
+
