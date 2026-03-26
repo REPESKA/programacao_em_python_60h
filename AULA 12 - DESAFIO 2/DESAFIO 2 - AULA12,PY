@@ -1,0 +1,71 @@
+
+import statistics
+
+def verificar():
+
+    FACEBOOK = [1000,6000,1200,8000,1400]
+
+    INSTAGRAN = [5000,4000,3000,2000,7000]
+
+    TESLA = [12000,13000,80000,30000,150000]
+
+    NASA = [14000,17500,20000,45000,59000]
+
+
+    print('Analise de salário: ')
+
+    m =  statistics.median(FACEBOOK)
+    print('MÉDIA 1',m)
+
+    m =  statistics.median(INSTAGRAN)
+    print('MÉDIA 2',m)    
+
+    m =  statistics.median(TESLA)
+    print('MÉDIA 3',m)
+
+    m =  statistics.median(NASA)
+    print('MÉDIA 4 ',m)
+
+    print('***'*10)
+        
+    mo =  statistics.mean(FACEBOOK)
+    print('MODA 1',mo)
+
+    mo =  statistics.mean(INSTAGRAN)
+    print('MODA 2',mo)    
+
+    mo =  statistics.mean(TESLA)
+    print('MODA 3',mo)
+
+    mo =  statistics.mean(NASA)
+    print('MODA 4 ',mo)
+
+    print('***'*10)
+
+    med =  statistics.median(FACEBOOK)
+    print('mediana 1',med)
+
+    med =  statistics.median(INSTAGRAN)
+    print('mediana 2',med)    
+
+    med =  statistics.median(TESLA)
+    print('mediana 3',med)
+
+    med =  statistics.median(NASA)
+    print('mediana 4 ',mo)
+    
+    print('***'*10)
+
+    desv = statistics.stdev(FACEBOOK)
+    print('desvio 1',desv)
+
+    desv = statistics.stdev(INSTAGRAN)
+    print('desvio 2',desv)    
+
+    desv = statistics.stdev(TESLA)
+    print('desvio 3',desv)
+
+    desv = statistics.stdev(NASA)
+    print('desvio 4 ', desv)
+
+verificar()
