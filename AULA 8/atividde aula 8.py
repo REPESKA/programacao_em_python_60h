@@ -1,29 +1,26 @@
+# 1* 
+# Peça para o usuário digitar um número, verifique se um número é positivo, 
+# negativo ou zero.
 
-print('Peça para o usuário digitar um número, verifique se um número é positivo, ') 
+print(input('DIGITE UM NUMERO')),
 
 
-numero  =  0 [
+numero = -1,0,1,100
 
-if numero >2:
-print in(input('é maior que 2 '))
 
-if numero == 3:
-     print('é 3 ')
-if numero < 0:
-   print('é negativo ')
 
-if numero >200:
-   print('é maior que 200 ')    
-
-]
-else: 
-print('É menor') 
+if numero > 0:
+    print("O número é positivo e ímpar.")
+elif numero < 0:
+    print("O número é negativo.")
+else: numero == 0
+print("O número é zero.")
 
 
 
 # # composta  
     
- nome  =  input('Digite seu nome: ')
+ #nome  =  input('Digite seu nome: ')
 # lista  =  ['Ana','José','Caio']
             
 
@@ -34,30 +31,25 @@ print('É menor')
 # Peça para o usuário digitar a idade, verifique se uma pessoa pode votar com 
 # base na idade.
 
-banco_dados =  {}
-
-print('Olá, Seja Muito Bem-vindo')
-
-nome1 = input('Nome,😁')
-idade1 = input('Idade')
 
 
-nome2 = input('Nome,😁')
-idade2 = input('Idade')
+
+print(input('DIGITE SUA IDADE')),
 
 
-nome3 = input('Nome,😁')
-idade3 = input('Idade')
+
+idade = 18,60  
+if idade <= 18 and idade >= 60:
+    print("Você é maior de idade. Vote concientemente.")
 
 
-banco_dados['nomes'] = [nome1, nome2, nome3]
-banco_dados['idades'] = [idade1, idade2, idade3]
+else: idade and 0,17
+print("Você não é maior de idade.")
 
 
-(banco_dados)
 
-login_nome = input('Digite seu nome >>')
-idade1 = input('Digite sua senha >> ')
+
+
 
 
 # 3*
