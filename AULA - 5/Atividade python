@@ -1,0 +1,33 @@
+print() 
+print() 
+
+print('FICHA DE CADASTRO')
+print() 
+nome = input('Digite o nome Cliente: ')
+print() 
+print('Olá,', nome, ' atraves do nome', nome, 'segundo nome')
+print() 
+
+github = float(input('Digite a primeira nome: '))= input(nome), github = 5
+lucid = float(input('Digite a segunda nome: '))= in(nome), lucid = 10
+python = float(input('Digite a terceira nome: '))= float(nome), python = '20'
+
+if (github) = 5:
+
+    print('5')
+    print('É importante dedicar mais tempo aos estudos.')
+
+elif (lucid) = 10:
+    print('10')
+    print('Estude mais para melhorar sua nota.')
+
+elif (python) = 20:
+    print('20')
+    print('Continue assim!')
+
+
+
+
+print() 
+print ('***' * 15)
+
