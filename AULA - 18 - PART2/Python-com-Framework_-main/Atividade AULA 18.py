@@ -13,7 +13,7 @@ def mostrar():
 
 
 janela  =  tk.Tk()
-janela.geometry('1200x800')
+janela.geometry('1500x1500')
 janela.configure(bg = 'white')
 # janela.iconbitmap('hospital.ico')
 
