@@ -1,6 +1,9 @@
 import sqlite3 # banco de dados
 import tkinter as tk # lib de interface gráfica
 from tkinter import messagebox, ttk # caixa de msg / tkinter
+import sys  
+import random
+import os
 
 
 def conectar():
@@ -31,12 +34,14 @@ def inserir_usuario():
     cpf   =  entry_cpf.get().strip()
     nome  =  entry_nome.get().strip()
     email =  entry_email.get().strip()
+    telefone = entry_telefone.get().strip()
+    observacao = entry_observacao.get().strip()
    
-    if cpf and nome and email:
+    if cpf and nome and email and telefone and observacao:
     #    try:
-            conn  =  conectar()
+            conn  =  conectar() 
             c = conn.cursor()
-            c.execute('INSERT INTO usuarios (id, nome, email) VALUES (?,?,?)', (cpf, nome, email))
+            c.execute('INSERT INTO usuarios (id, nome, email, telefone, observacao) VALUES (?,?,?,?,?)',(cpf, nome, email, telefone, observacao))
             conn.commit()
             conn.close()
             messagebox.showinfo('Dados','DADOS INSERIDOS COM SUCESSO!')
@@ -44,6 +49,11 @@ def inserir_usuario():
             entry_cpf.delete(0, tk.END)
             entry_nome.delete(0, tk.END)
             entry_email.delete(0, tk.END)
+            entry_telefone.delete(0, tk.END)
+            entry_observacao.delete(0, tk.END)
+
+
+
     #    except sqlite3.IntegrityError:
     #         messagebox.showerror('Erro', 'O DADO JA EXISTE')
 
@@ -71,8 +81,10 @@ def editar():
        
         novo_nome  =  entry_nome.get()
         novo_email =  entry_email.get()
+        novo_telefone = entry_telefone.get()
+        novo_observacao = entry_observacao.get()
        
-        if  novo_nome and novo_email:
+        if  novo_nome and novo_email and novo_telefone and novo_observacao:
             try:
                     conn  =  conectar()
                     c = conn.cursor()
@@ -84,6 +96,8 @@ def editar():
                     entry_cpf.delete(0, tk.END)
                     entry_nome.delete(0, tk.END)
                     entry_email.delete(0, tk.END)
+                    entry_telefone.delete(0, tk.END)
+                    entry_observacao.delete(0, tk.END)    
             except:
                     messagebox.showerror('Erro', 'OCORREU UM ERRO AO INSERIR OS DADOS, VERIFIQUE')
         else:
@@ -114,16 +128,18 @@ def deletar_usuario():
 
 # interface grafica
 janela = tk.Tk()
-janela.geometry('1250x800')
-janela.title('SOLUTIONS')
+janela.geometry('1650x820')
+janela.title('SOLUTIONS - PRO 10X - SISTEMAS DIGITAIS')
+#janela.iconbitmap('assets/logo.png')
+janela.configure(bg='white')    
 
 style = ttk.Style()
 style.theme_use('clam')
 style.configure('TLabel', background = 'white', font = ('arial', 10))
-style.configure('TEntry', font = ('Segoe UI', 10))
-style.configure('TButton', font = ('Segoe UI', 10), padding = 6)
-style.configure('Treeview.Hending', font = ('Segoe UI', 10, 'bold'))
-style.configure('Treeview',font = ('Segoe UI', 10, 'bold'))
+style.configure('TEntry', font = ('Calibri', 10))
+style.configure('TButton', font = ('Calibri', 10), padding = 6)
+style.configure('Treeview.Hending', font = ('Calibri', 10, 'bold'))
+style.configure('Treeview',font = ('Calibri', 10, 'bold'))
 
 
 # frames  -  sessão
@@ -133,7 +149,7 @@ main_frame.pack(fill=tk.BOTH, expand=True)
 
 # widgets -  elementos  
 
-titulo = ttk.Label(main_frame, text='Sistema de Cadastro', font=('Segoe UI', 10, 'bold'))
+titulo = ttk.Label(main_frame, text='Sistema de Cadastro', font=('Verdana', 12, 'bold'))
 titulo.grid(row=0, columnspan=2,pady=(0,15), sticky='w')
 ###############################
 
@@ -162,6 +178,19 @@ ttk.Label(input_frame, text='E-MAIL').grid(row=2, column=0, padx=(0,10), pady=5,
 entry_email = ttk.Entry(input_frame, width=30)
 entry_email.grid(row=2, column=1, padx=(0,20), pady=5, sticky='w')
 
+# textos para direcionar
+# TELEFONE  
+ttk.Label(input_frame, text='TELEFONE').grid(row=3, column=0, padx=(0,10), pady=5, sticky='e')
+
+entry_telefone = ttk.Entry(input_frame, width=30)
+entry_telefone.grid(row=3, column=1, padx=(0,20), pady=5, sticky='w')
+
+# textos para direcionar
+# OBSERVAÇÃO
+ttk.Label(input_frame, text='OBSERVAÇÃO').grid(row=4, column=0, padx=(0,10), pady=5, sticky='e')
+
+entry_observacao = ttk.Entry(input_frame, width=30)
+entry_observacao.grid(row=4, column=1, padx=(0,20), pady=5, sticky='w')
 
 # botões
 btn_frame = ttk.Frame(main_frame)
@@ -189,8 +218,8 @@ main_frame.columnconfigure(0, weight = 1)
 main_frame.rowconfigure(3,weight = 1)
 
 # criação da TreeView
-columns = ('CPF', 'NOME', 'E-MAIL')
-tree = ttk.Treeview(tree_frame, columns=columns, show='headings', height=12)
+columns = ('CPF', 'NOME', 'E-MAIL', 'TELEFONE', 'OBSERVAÇÃO')
+tree = ttk.Treeview(tree_frame, columns=columns, show='headings', height=10)
 tree.pack(fill=tk.BOTH, expand=True)
 
 for col in columns:
